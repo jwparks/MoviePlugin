@@ -9,6 +9,7 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         super.onEnable();
+        System.out.println("Moive plugin loaded");
         Objects.requireNonNull(this.getCommand("movie")).setExecutor(new MovieStart());
 
     }

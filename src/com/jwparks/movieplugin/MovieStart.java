@@ -14,13 +14,15 @@ public class MovieStart implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        // "C:\Program Files\Google\Chrome\Application\chrome.exe" -kiosk -fullscreen http://google.com
         String url = "plugins/Movies/"+args[0]+".html";
         File htmlFile = new File(url);
         try {
-            Desktop.getDesktop().browse(htmlFile.toURI());
+            Runtime.getRuntime().exec("\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" -kiosk -fullscreen "+htmlFile.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return true;
     }
 }
